@@ -1,0 +1,7 @@
+.git
+*~
+*.o
+*.depend
+*.layout
+Login/bin
+Login/obj
