@@ -25,11 +25,11 @@ void Logger::Log(LOG_NAME logName, string location, string message, bool newLine
             cout << "[\033[1;31mfail\033[0m] ";
             break;
         case WARN:
-            cout << "[\033[1;35mwarn\033[0m] ";
+            cout << "[\033[1;33mwarn\033[0m] ";
             break;
         case INFO:
         default:
-            cout << "[\033[1;33minfo\033[0m] ";
+            cout << "[\033[1;35minfo\033[0m] ";
             break;
     }
 

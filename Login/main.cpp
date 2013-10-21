@@ -22,5 +22,6 @@ int main()
     delete config;
     delete database;
 
+
     return 0;
 }
