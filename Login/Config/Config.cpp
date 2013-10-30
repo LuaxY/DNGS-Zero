@@ -1,22 +1,12 @@
 #include "Config/Config.h"
 
-Config* Config::m_pInstance = NULL;
-
-Config* Config::Instance()
-{
-    if(!m_pInstance)
-        m_pInstance = new Config;
-
-    return m_pInstance;
-}
-
 void Config::init(char* config_file)
 {
     INIReader reader(config_file);
 
     if(reader.ParseError() == -1)
     {
-        Logger::Log(WARN, sLog(), "configuration file not found, default configuration selected.");
+        Logger::warn() << sLog() << "configuration file not found, default configuration selected.";
     }
 
     /** auth **/
@@ -31,5 +21,5 @@ void Config::init(char* config_file)
     password = reader.Get("database", "password", "");
     database = reader.Get("database", "database", "dngs_login");
 
-    Logger::Log(OK, sLog(), "configuration initialized.");
+    Logger::ok() << sLog() << "configuration initialized.";
 }

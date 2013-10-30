@@ -1,15 +1,5 @@
 #include "Database/Database.h"
 
-Database* Database::m_pInstance = NULL;
-
-Database* Database::Instance()
-{
-    if(!m_pInstance)
-        m_pInstance = new Database;
-
-    return m_pInstance;
-}
-
 Database::~Database()
 {
     delete db;
@@ -18,26 +8,26 @@ Database::~Database()
 
 void Database::init()
 {
-    Config* config = Config::Instance();
+    Config* config = Config::getInstance();
 
     try
     {
-        conn = new connection(" user=" + config->username +
+        conn = new pqxx::connection(" user=" + config->username +
                               " host=" + config->host +
                               " password=" + config->password +
                               " dbname=" + config->database);
     }
     catch(const exception &e)
     {
-        Logger::Log(FAIL, sLog(), e.what());
+        Logger::fail() << sLog() << e.what();
         exit(1);
     }
 
-    db = new nontransaction(*conn);
+    db = new pqxx::nontransaction(*conn);
 
     //result r = db->exec("SELECT * FROM accounts");
     //cout << r[0][1].as<string>() << endl;
-    Logger::Log(OK, sLog(), "connected to database.");
+    Logger::ok() << sLog() << "connected to database.";
 }
 
 void Database::selectDefault()

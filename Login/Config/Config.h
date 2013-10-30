@@ -3,13 +3,13 @@
 
 #include "Config/INIReader.h"
 #include "Utils/Logger.h"
+#include "Utils/Singleton.h"
 
 using namespace std;
 
-class Config
+class Config : public Singleton<Config>
 {
     public:
-        static Config* Instance();
         void init(char*);
 
         /** login **/
@@ -23,12 +23,6 @@ class Config
         string username;
         string password;
         string database;
-
-    private:
-        Config() {};
-        Config(Config const&) {};
-        Config& operator=(Config const&) {};
-        static Config* m_pInstance;
 };
 
 #endif // CONFIG_H

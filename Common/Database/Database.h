@@ -6,25 +6,18 @@
 
 #include "Config/Config.h"
 #include "Utils/Logger.h"
+#include "Utils/Singleton.h"
 
-using namespace std;
-using namespace pqxx;
-
-class Database
+class Database : public Singleton<Database>
 {
 public:
-    static Database* Instance();
     ~Database();
     void init();
     void selectDefault();
-    nontransaction* db;
+    pqxx::nontransaction* db;
 
 private:
-    Database() {};
-    Database(Database const&) {};
-    Database& operator=(Database const&) {};
-    static Database* m_pInstance;
-    connection* conn;
+    pqxx::connection* conn;
 };
 
 #endif // DATABASE_H
