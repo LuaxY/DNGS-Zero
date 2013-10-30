@@ -1,13 +1,11 @@
-#include "Config/Config.h"
+#include "config/config.h"
 
 void Config::init(char* config_file)
 {
     INIReader reader(config_file);
 
     if(reader.ParseError() == -1)
-    {
-        Logger::warn() << sLog() << "configuration file not found, default configuration selected.";
-    }
+        Logger::warn() << "file" << config_file << "not found, default configuration selected.";
 
     /** auth **/
     port = reader.GetInteger("auth", "port", 443);
@@ -21,5 +19,8 @@ void Config::init(char* config_file)
     password = reader.Get("database", "password", "");
     database = reader.Get("database", "database", "dngs_login");
 
-    Logger::ok() << sLog() << "configuration initialized.";
+    /** misc **/
+    startedTime = getCurrentDate('-') + "-" + getCurrentTime('-');
+
+    Logger::ok() << "configuration initialized.";
 }

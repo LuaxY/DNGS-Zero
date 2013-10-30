@@ -1,9 +1,10 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#include "Config/INIReader.h"
-#include "Utils/Logger.h"
-#include "Utils/Singleton.h"
+#include "config/INIReader.h"
+#include "utils/logger.h"
+#include "utils/singleton.h"
+#include "utils/time.h"
 
 using namespace std;
 
@@ -23,6 +24,9 @@ class Config : public Singleton<Config>
         string username;
         string password;
         string database;
+
+        /** misc **/
+        string startedTime;
 };
 
 #endif // CONFIG_H

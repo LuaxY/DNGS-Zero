@@ -1,8 +1,8 @@
 #include <iostream>
 
-#include "Config/Config.h"
-#include "Database/Database.h"
-#include "Utils/Logger.h"
+#include "config/config.h"
+#include "database/database.h"
+#include "utils/logger.h"
 
 int main()
 {

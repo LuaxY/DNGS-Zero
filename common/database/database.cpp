@@ -1,4 +1,4 @@
-#include "Database/Database.h"
+#include "database/database.h"
 
 Database::~Database()
 {
@@ -19,7 +19,7 @@ void Database::init()
     }
     catch(const exception &e)
     {
-        Logger::fail() << sLog() << e.what();
+        Logger::fail() << "unable to connect to the database.";
         exit(1);
     }
 
@@ -27,10 +27,10 @@ void Database::init()
 
     //result r = db->exec("SELECT * FROM accounts");
     //cout << r[0][1].as<string>() << endl;
-    Logger::ok() << sLog() << "connected to database.";
+    Logger::ok() << "connected to database.";
 }
 
 void Database::selectDefault()
 {
-    //Config* config = Config::Instance();
+    //Config* config = Config::getInstance();
 }

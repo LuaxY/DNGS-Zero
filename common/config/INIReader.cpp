@@ -4,8 +4,8 @@
 #include <cctype>
 #include <cstdlib>
 
-#include "Config/ini.h"
-#include "Config/INIReader.h"
+#include "config/ini.h"
+#include "config/INIReader.h"
 
 using std::string;
 

@@ -4,9 +4,9 @@
 #include <iostream>
 #include <pqxx/pqxx>
 
-#include "Config/Config.h"
-#include "Utils/Logger.h"
-#include "Utils/Singleton.h"
+#include "config/config.h"
+#include "utils/logger.h"
+#include "utils/singleton.h"
 
 class Database : public Singleton<Database>
 {

@@ -41,19 +41,22 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="../../Common/Config/INIReader.cpp" />
-		<Unit filename="../../Common/Config/INIReader.h" />
-		<Unit filename="../../Common/Config/ini.c">
+		<Unit filename="../../common/config/INIReader.cpp" />
+		<Unit filename="../../common/config/INIReader.h" />
+		<Unit filename="../../common/config/ini.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../Common/Config/ini.h" />
-		<Unit filename="../../Common/Database/Database.cpp" />
-		<Unit filename="../../Common/Database/Database.h" />
-		<Unit filename="../../Common/Utils/Logger.cpp" />
-		<Unit filename="../../Common/Utils/Logger.h" />
-		<Unit filename="../../Login/Config/Config.cpp" />
-		<Unit filename="../../Login/Config/Config.h" />
-		<Unit filename="../../Login/main.cpp" />
+		<Unit filename="../../common/config/ini.h" />
+		<Unit filename="../../common/database/database.cpp" />
+		<Unit filename="../../common/database/database.h" />
+		<Unit filename="../../common/utils/logger.cpp" />
+		<Unit filename="../../common/utils/logger.h" />
+		<Unit filename="../../common/utils/singleton.h" />
+		<Unit filename="../../common/utils/time.cpp" />
+		<Unit filename="../../common/utils/time.h" />
+		<Unit filename="../../login/config/config.cpp" />
+		<Unit filename="../../login/config/config.h" />
+		<Unit filename="../../login/main.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
