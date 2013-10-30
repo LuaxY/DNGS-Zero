@@ -3,6 +3,7 @@
 *.o
 *.depend
 *.layout
+*.log
 IDE/CodeBlocks/Login/bin
 IDE/CodeBlocks/Login/obj
 IDE/CodeBlocks/Game/bin
