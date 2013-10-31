@@ -5,7 +5,8 @@
 #include <string>
 #include <sstream>
 
-std::string getCurrentTime(char separator = ':');
-std::string getCurrentDate(char separator = ':');
+std::string get_current_time(char separator = ':');
+std::string get_current_date(char separator = ':');
+static std::string started_time = get_current_date('-') + "-" + get_current_time('-');;
 
 #endif // TIME_H

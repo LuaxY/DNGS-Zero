@@ -26,10 +26,10 @@ namespace Logger
 
     protected:
         std::ostringstream msg;
-        std::ostringstream titleConsole;
-        std::ostringstream titleLog;
+        std::ostringstream title_console;
+        std::ostringstream title_logfile;
 
-        void displayTime();
+        void display_time();
     };
 
     class debug : public Logger
@@ -60,6 +60,12 @@ namespace Logger
     {
     public:
         info();
+    };
+
+    class error : public Logger
+    {
+    public:
+        error();
     };
 }
 

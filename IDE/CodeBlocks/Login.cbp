@@ -17,8 +17,8 @@
 					<Add option="-w" />
 					<Add option="-g" />
 					<Add option="-lpqxx -lpq" />
-					<Add directory="../../Common" />
-					<Add directory="../../Login" />
+					<Add directory="../../common" />
+					<Add directory="../../login" />
 				</Compiler>
 				<Linker>
 					<Add library="/usr/lib/libpqxx.so" />
@@ -57,6 +57,8 @@
 		<Unit filename="../../login/config/config.cpp" />
 		<Unit filename="../../login/config/config.h" />
 		<Unit filename="../../login/main.cpp" />
+		<Unit filename="../../login/server.cpp" />
+		<Unit filename="../../login/server.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

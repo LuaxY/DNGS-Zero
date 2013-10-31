@@ -1,0 +1,19 @@
+<config>
+	<database_host>127.0.0.1</database_host>
+
+	<database_port>5432</database_port>
+
+	<database_user>dngs</database_user>
+
+	<database_password>password</database_password>
+
+	<database_name>dngs_login</database_name>
+
+	<login_port>1337</login_port>
+
+	<login_maxuser>200</login_maxuser>
+
+	<login_requiredVersion>1542</login_requiredVersion>
+
+	<login_currentVersion>1547</login_currentVersion>
+</config>

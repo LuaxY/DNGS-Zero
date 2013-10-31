@@ -1,6 +1,6 @@
 #include <utils/time.h>
 
-std::string getCurrentTime(char separator)
+std::string get_current_time(char separator)
 {
     time_t t = time(0);
     struct tm *now = localtime(&t);
@@ -13,7 +13,7 @@ std::string getCurrentTime(char separator)
     return time.str();
 }
 
-std::string getCurrentDate(char separator)
+std::string get_current_date(char separator)
 {
     time_t t = time(0);
     struct tm *now = localtime(&t);

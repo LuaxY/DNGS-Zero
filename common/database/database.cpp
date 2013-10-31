@@ -6,28 +6,25 @@ Database::~Database()
     delete conn;
 }
 
-void Database::init()
+void Database::init(std::string host, std::string user, std::string password, std::string name)
 {
-    Config* config = Config::getInstance();
-
     try
     {
-        conn = new pqxx::connection(" user=" + config->username +
-                              " host=" + config->host +
-                              " password=" + config->password +
-                              " dbname=" + config->database);
+        conn = new pqxx::connection(" user=" + user +
+                              " host=" + host +
+                              " password=" + password +
+                              " dbname=" + name);
     }
-    catch(const exception &e)
+    catch(const std::exception& e)
     {
-        Logger::fail() << "unable to connect to the database.";
-        exit(1);
+        throw std::logic_error("unable to conntect to the database");
     }
 
     db = new pqxx::nontransaction(*conn);
 
     //result r = db->exec("SELECT * FROM accounts");
     //cout << r[0][1].as<string>() << endl;
-    Logger::ok() << "connected to database.";
+    Logger::ok() << "connected to database successful";
 }
 
 void Database::selectDefault()
