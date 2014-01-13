@@ -6,11 +6,6 @@
 
 #if defined(DATABASE_MYSQL)
 #  include <odb/mysql/database.hxx>
-/*#elif defined(DATABASE_SQLITE)
-#  include <odb/connection.hxx>
-#  include <odb/transaction.hxx>
-#  include <odb/schema-catalog.hxx>
-#  include <odb/sqlite/database.hxx>*/
 #elif defined(DATABASE_PGSQL)
 #  include <odb/pgsql/database.hxx>
 #elif defined(DATABASE_ORACLE)

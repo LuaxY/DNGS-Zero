@@ -16,16 +16,7 @@
 					<Add option="-std=c++11" />
 					<Add option="-w" />
 					<Add option="-g" />
-					<Add option="-lpqxx -lpq" />
-					<Add option="-DDATABASE_MYSQL" />
-					<Add option="-DODB_THREADS_WIN32" />
-					<Add option="-DLIBODB_MYSQL_INCLUDE_SHORT" />
-					<Add directory="../../common" />
-					<Add directory="../../login" />
 				</Compiler>
-				<Linker>
-					<Add library="/usr/lib/libpqxx.so" />
-				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="./Login/bin/Release/Login" prefix_auto="1" extension_auto="1" />
@@ -36,22 +27,19 @@
 					<Add option="-O2" />
 					<Add option="-std=c++11" />
 					<Add option="-w" />
-					<Add option="-lpqxx -lpq" />
-					<Add option="-DDATABASE_MYSQL" />
-					<Add option="-DODB_THREADS_WIN32" />
-					<Add option="-DLIBODB_MYSQL_INCLUDE_SHORT" />
-					<Add directory="../../common" />
-					<Add directory="../../login" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add library="/usr/lib/libpqxx.so" />
 				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add option="-DDATABASE_MYSQL" />
+			<Add option="-DODB_THREADS_POSIX" />
+			<Add directory="../../common" />
+			<Add directory="../../login" />
 		</Compiler>
 		<Unit filename="../../common/config/config.cpp" />
 		<Unit filename="../../common/config/config.h" />

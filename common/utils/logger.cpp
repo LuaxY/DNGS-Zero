@@ -11,8 +11,7 @@ Logger::Logger::~Logger()
     }
     // #endif
 
-    //std::cerr << title_console.str() << msg.str() << std:: endl; // LINUX mode with colors.
-    std::cerr << title_logfile.str() << msg.str() << std:: endl;
+    std::cerr << title_console.str() << msg.str() << std:: endl; // LINUX mode with colors.
 }
 
 void Logger::Logger::display_time()
