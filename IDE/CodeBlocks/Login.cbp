@@ -17,6 +17,9 @@
 					<Add option="-w" />
 					<Add option="-g" />
 					<Add option="-lpqxx -lpq" />
+					<Add option="-DDATABASE_MYSQL" />
+					<Add option="-DODB_THREADS_WIN32" />
+					<Add option="-DLIBODB_MYSQL_INCLUDE_SHORT" />
 					<Add directory="../../common" />
 					<Add directory="../../login" />
 				</Compiler>
@@ -31,9 +34,18 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-std=c++11" />
+					<Add option="-w" />
+					<Add option="-lpqxx -lpq" />
+					<Add option="-DDATABASE_MYSQL" />
+					<Add option="-DODB_THREADS_WIN32" />
+					<Add option="-DLIBODB_MYSQL_INCLUDE_SHORT" />
+					<Add directory="../../common" />
+					<Add directory="../../login" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add library="/usr/lib/libpqxx.so" />
 				</Linker>
 			</Target>
 		</Build>
@@ -41,12 +53,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="../../common/config/INIReader.cpp" />
-		<Unit filename="../../common/config/INIReader.h" />
-		<Unit filename="../../common/config/ini.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../../common/config/ini.h" />
+		<Unit filename="../../common/config/config.cpp" />
+		<Unit filename="../../common/config/config.h" />
+		<Unit filename="../../common/config/third_party/pugiconfig.hpp" />
+		<Unit filename="../../common/config/third_party/pugixml.cpp" />
+		<Unit filename="../../common/config/third_party/pugixml.hpp" />
 		<Unit filename="../../common/database/database.cpp" />
 		<Unit filename="../../common/database/database.h" />
 		<Unit filename="../../common/utils/logger.cpp" />
@@ -54,14 +65,14 @@
 		<Unit filename="../../common/utils/singleton.h" />
 		<Unit filename="../../common/utils/time.cpp" />
 		<Unit filename="../../common/utils/time.h" />
-		<Unit filename="../../login/config/config.cpp" />
-		<Unit filename="../../login/config/config.h" />
+		<Unit filename="../../login/default_config.h" />
 		<Unit filename="../../login/main.cpp" />
 		<Unit filename="../../login/server.cpp" />
 		<Unit filename="../../login/server.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
+			<envvars />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

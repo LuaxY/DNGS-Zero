@@ -10,7 +10,7 @@ shutdown_type Server::run(int argc, char* argv[])
     version << LOGIN_VERSION_MAJOR << "." << LOGIN_VERSION_MINOR << "." << LOGIN_VERSION_REVISION;
 
     std::cout << std::endl;
-    std::cout << "DNGS Zero - Login (DEV) by Catbug (" << __DATE__ << " " << __TIME__ << ")" << std::endl;
+    std::cout << "DNGS Zero - Login (DEV) by LuaxY (" << __DATE__ << " " << __TIME__ << ")" << std::endl;
     std::cout << "[ login " << version.str() << " ] ";
     std::cout << "[ dofus " << DOFUS_VERSION_MAJOR << "."
         << DOFUS_VERSION_MINOR << "."
@@ -18,7 +18,7 @@ shutdown_type Server::run(int argc, char* argv[])
         << DOFUS_VERSION_REVISION << "."
         << DOFUS_VERSION_PATCH << " ]" << std::endl << std::endl;
 
-    /** Connect to PostgreSQL Database **/
+    /** Connect to database **/
     Database database = Database::create();
     database.init(config.get_property("database_host", DATABASE_HOST_DEFAULT),
         config.get_property("database_user", DATABASE_USER_DEFAULT),

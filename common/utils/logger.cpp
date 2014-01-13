@@ -3,7 +3,7 @@
 Logger::Logger::~Logger()
 {
     // #ifdef LOG_FILE
-    std::ofstream logFile("log/login-" + started_time + ".log", std::ios::out | std::ios::app);
+    std::ofstream logFile("logs/login-" + started_time + ".log", std::ios::out | std::ios::app);
     if(logFile.is_open())
     {
         logFile << title_logfile.str() << msg.str() << std::endl;
@@ -11,7 +11,8 @@ Logger::Logger::~Logger()
     }
     // #endif
 
-    std::cerr << title_console.str() << msg.str() << std:: endl;
+    //std::cerr << title_console.str() << msg.str() << std:: endl; // LINUX mode with colors.
+    std::cerr << title_logfile.str() << msg.str() << std:: endl;
 }
 
 void Logger::Logger::display_time()

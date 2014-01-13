@@ -1,6 +1,12 @@
 #ifndef DEFAULT_CONFIG_H
 #define DEFAULT_CONFIG_H
 
+#define DOFUS_VERSION_MAJOR 2
+#define DOFUS_VERSION_MINOR 17
+#define DOFUS_VERSION_RELEASE 1
+#define DOFUS_VERSION_REVISION 80439
+#define DOFUS_VERSION_PATCH 0
+
 const std::string DATABASE_HOST_DEFAULT = "127.0.0.1";
 const std::string DATABASE_NAME_DEFAULT = "dngs_login";
 const std::string DATABASE_USER_DEFAULT = "postgres";

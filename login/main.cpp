@@ -9,7 +9,6 @@ int main(int argc, char* argv[])
     {
         while(Server::create().run(argc, argv) == shutdown_type::REBOOT)
             Server::kill();
-
     }
     catch(const std::exception& e)
     {

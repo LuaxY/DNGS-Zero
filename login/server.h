@@ -7,14 +7,6 @@
 #include "database/database.h"
 #include "default_config.h"
 
-/** TEMP **/
-#define DOFUS_VERSION_MAJOR 2
-#define DOFUS_VERSION_MINOR 16
-#define DOFUS_VERSION_RELEASE 2
-#define DOFUS_VERSION_REVISION 35100
-#define DOFUS_VERSION_PATCH 0
-/**********/
-
 enum shutdown_type
 {
     NOT_REQUESTED,
