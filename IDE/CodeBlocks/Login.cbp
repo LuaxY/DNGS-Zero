@@ -41,6 +41,10 @@
 			<Add directory="../../common" />
 			<Add directory="../../login" />
 		</Compiler>
+		<Linker>
+			<Add library="/usr/local/lib/libodb-2.3.so" />
+			<Add library="/usr/local/lib/libodb-mysql-2.3.so" />
+		</Linker>
 		<Unit filename="../../common/config/config.cpp" />
 		<Unit filename="../../common/config/config.h" />
 		<Unit filename="../../common/config/third_party/pugiconfig.hpp" />
@@ -48,6 +52,7 @@
 		<Unit filename="../../common/config/third_party/pugixml.hpp" />
 		<Unit filename="../../common/database/database.cpp" />
 		<Unit filename="../../common/database/database.h" />
+		<Unit filename="../../common/database/tables/account.h" />
 		<Unit filename="../../common/utils/logger.cpp" />
 		<Unit filename="../../common/utils/logger.h" />
 		<Unit filename="../../common/utils/singleton.h" />

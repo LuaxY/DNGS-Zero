@@ -5,7 +5,7 @@
 
 	<database_user>dngs</database_user>
 
-	<database_password>password</database_password>
+	<database_password>dngs</database_password>
 
 	<database_name>dngs_login</database_name>
 

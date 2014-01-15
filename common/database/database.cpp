@@ -1,44 +1,37 @@
 #include "database/database.h"
+#include "database/tables/account.h"
+#include "utils/unit_test.h"
 
 Database::~Database()
 {
-//    delete db;
-    //delete conn;
+    delete db;
+    delete conn;
 }
 
 void Database::init(std::string host, std::string user, std::string password, std::string name)
 {
     try
     {
-        db = create_database(user, password, name);
+        conn = new pqxx::connection(" user=" + user +
+                                " host=" + host +
+                                " password=" + password +
+                                " dbname=" + name);
+
+        db = new pqxx::nontransaction(*conn);
     }
     catch(const std::exception& e)
     {
-        throw std::logic_error("unable to conntect to the database");
+        throw std::logic_error("unable to conntect to the database '" + user + "'@'" + host + "' (USING PASSWORD " + (password == "" ? "NO" : "YES") + ")");
     }
 
-    //db = new pqxx::nontransaction(*conn);
+    /*pqxx::result r = db->exec("SELECT * FROM accounts");
+    account admin(r[0][1].as<std::string>(), r[0][2].as<std::string>());
+    std::cout << "login: " << admin.login() << " password: " << admin.password() << std::endl;*/
 
-    //result r = db->exec("SELECT * FROM accounts");
-    //cout << r[0][1].as<string>() << endl;
     Logger::ok() << "connected to database successful";
 }
 
 void Database::select_default()
 {
     //Config* config = Config::getInstance();
-}
-
-inline std::auto_ptr<odb::database> Database::create_database(std::string _user, std::string _password, std::string _name)
-{
-#if defined(DATABASE_MYSQL)
-    std::auto_ptr<odb::database> _db(new odb::mysql::database(_user, _password, _name));
-#elif defined(DATABASE_PGSQL)
-    std::auto_ptr<odb::database> _db(new odb::pgsql::database(_user, _password, _name));
-#elif defined(DATABASE_ORACLE)
-    std::auto_ptr<odb::database> _db(new odb::oracle::database(_user, _password, _name));
-#elif defined(DATABASE_MSSQL)
-    std::auto_ptr<odb::database> _db(new odb::mssql::database(_user, _password, _name));
-#endif
-    return _db;
 }

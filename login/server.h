@@ -16,7 +16,7 @@ enum shutdown_type
 
 constexpr int LOGIN_VERSION_MAJOR = 0,
     LOGIN_VERSION_MINOR = 0,
-    LOGIN_VERSION_REVISION = 5;
+    LOGIN_VERSION_REVISION = 8;
 
 class Server : public Singleton<Server>
 {
