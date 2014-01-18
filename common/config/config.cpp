@@ -11,7 +11,7 @@ void Config::parse_all()
     {
         auto result = parse_file(file);
         if(!result.empty())
-            Logger::fail() << "parsing failed" << file << ":" << result;
+            pFail() << "parsing failed" << file << ":" << result;
     }
 }
 

@@ -19,65 +19,66 @@ enum verbosity
     ALL
 };
 
-namespace Logger
+
+class Logger
 {
-    class Logger
+public:
+    static verbosity level_allowed;
+    static bool is_filelog;
+
+    ~Logger();
+
+    template<class T>
+    Logger &operator<<(const T &x)
     {
-    public:
-        ~Logger();
+        msg << x << " ";
+        return *this;
+    }
 
-        template<class T>
-        Logger &operator<<(const T &x)
-        {
-            msg << x << " ";
-            return *this;
-        }
 
-    protected:
-        std::ostringstream msg;
-        std::ostringstream title_console;
-        std::ostringstream title_logfile;
-        verbosity level;
-        //Config config;
+protected:
+    std::ostringstream msg;
+    std::ostringstream title_console;
+    std::ostringstream title_logfile;
+    verbosity level;
 
-        void display_time();
-    };
+    void display_time();
+};
 
-    class debug : public Logger
-    {
-    public:
-        debug(verbosity level = verbosity::DEFAULT);
-    };
+class pDebug : public Logger
+{
+public:
+    pDebug(verbosity level = verbosity::DEFAULT);
+};
 
-    class ok : public Logger
-    {
-    public:
-        ok(verbosity level = verbosity::DEFAULT);
-    };
+class pOk : public Logger
+{
+public:
+    pOk(verbosity level = verbosity::DEFAULT);
+};
 
-    class fail : public Logger
-    {
-    public:
-        fail(verbosity level = verbosity::DEFAULT);
-    };
+class pFail : public Logger
+{
+public:
+    pFail(verbosity level = verbosity::DEFAULT);
+};
 
-    class warn : public Logger
-    {
-    public:
-        warn(verbosity level = verbosity::DEFAULT);
-    };
+class pWarn : public Logger
+{
+public:
+    pWarn(verbosity level = verbosity::DEFAULT);
+};
 
-    class info : public Logger
-    {
-    public:
-        info(verbosity level = verbosity::DEFAULT);
-    };
+class pInfo : public Logger
+{
+public:
+    pInfo(verbosity level = verbosity::DEFAULT);
+};
 
-    class error : public Logger
-    {
-    public:
-        error(verbosity level = verbosity::DEFAULT);
-    };
-}
+class pError : public Logger
+{
+public:
+    pError(verbosity level = verbosity::DEFAULT);
+};
 
 #endif // LOGGER_HPP

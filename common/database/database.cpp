@@ -13,9 +13,9 @@ void Database::init(std::string host, std::string user, std::string password, st
     try
     {
         conn = new pqxx::connection(" user=" + user +
-                                " host=" + host +
-                                " password=" + password +
-                                " dbname=" + name);
+                                    " host=" + host +
+                                    " password=" + password +
+                                    " dbname=" + name);
 
         db = new pqxx::nontransaction(*conn);
     }
@@ -28,7 +28,7 @@ void Database::init(std::string host, std::string user, std::string password, st
     account admin(r[0][1].as<std::string>(), r[0][2].as<std::string>());
     std::cout << "login: " << admin.login() << " password: " << admin.password() << std::endl;*/
 
-    Logger::ok() << "connected to database successful";
+    pOk() << "connected to the database";
 }
 
 void Database::select_default()

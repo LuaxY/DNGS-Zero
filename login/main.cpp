@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
     }
     catch(const std::exception& e)
     {
-        Logger::error() << "unhandled exception :" << e.what();
+        pError() << "unhandled exception :" << e.what();
     }
 
     return 0;

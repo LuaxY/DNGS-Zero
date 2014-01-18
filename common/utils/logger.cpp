@@ -1,12 +1,11 @@
 #include "utils/logger.hpp"
-#include "server.hpp"
 
-Logger::Logger::~Logger()
+verbosity Logger::level_allowed = verbosity::DEFAULT;
+bool Logger::is_filelog = true;
+
+Logger::~Logger()
 {
-    verbosity allowed = (verbosity)g_config.get_property("verbose_level", (int)verbosity::DEFAULT);
-    bool is_filelog = g_config.get_property("filelog", true);
-
-    if(is_filelog && allowed >= level)
+    if(is_filelog && level_allowed >= level)
     {
         std::ofstream logFile("logs/login-" + started_time + ".log", std::ios::out | std::ios::app);
         if(logFile.is_open())
@@ -16,18 +15,18 @@ Logger::Logger::~Logger()
         }
     }
 
-    if(allowed >= level)
-        std::cerr << title_console.str() << msg.str() << std:: endl;
+    if(level_allowed >= level)
+        std::cout << title_console.str() << msg.str() << std:: endl;
 }
 
-void Logger::Logger::display_time()
+void Logger::display_time()
 {
     // #ifdef SHOW_TIME
     msg <<  "[" << get_current_time() << "] ";
     // #endif
 }
 
-Logger::debug::debug(verbosity _level)
+pDebug::pDebug(verbosity _level)
 {
     level = _level;
     title_console << "[\033[1;34mdbug\033[0m] ";
@@ -35,7 +34,7 @@ Logger::debug::debug(verbosity _level)
     display_time();
 }
 
-Logger::ok::ok(verbosity _level)
+pOk::pOk(verbosity _level)
 {
     level = _level;
     title_console << "[\033[1;32m ok \033[0m] ";
@@ -43,7 +42,7 @@ Logger::ok::ok(verbosity _level)
     display_time();
 }
 
-Logger::fail::fail(verbosity _level)
+pFail::pFail(verbosity _level)
 {
     level = _level;
     title_console << "[\033[1;31mfail\033[0m] ";
@@ -51,7 +50,7 @@ Logger::fail::fail(verbosity _level)
     display_time();
 }
 
-Logger::warn::warn(verbosity _level)
+pWarn::pWarn(verbosity _level)
 {
     level = _level;
     title_console << "[\033[1;33mwarn\033[0m] ";
@@ -59,7 +58,7 @@ Logger::warn::warn(verbosity _level)
     display_time();
 }
 
-Logger::info::info(verbosity _level)
+pInfo::pInfo(verbosity _level)
 {
     level = _level;
     title_console << "[\033[1;35minfo\033[0m] ";
@@ -67,7 +66,7 @@ Logger::info::info(verbosity _level)
     display_time();
 }
 
-Logger::error::error(verbosity _level)
+pError::pError(verbosity _level)
 {
     level = _level;
     title_console << "[\033[1;31merro\033[0m] ";
