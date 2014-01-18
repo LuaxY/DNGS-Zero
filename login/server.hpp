@@ -1,6 +1,8 @@
 #ifndef SERVER_HPP
 #define SERVER_HPP
 
+#include <boost/asio.hpp>
+
 #include "utils/logger.hpp"
 #include "utils/singleton.hpp"
 #include "config/config.hpp"
@@ -24,6 +26,9 @@ public:
     Server();
     shutdown_type run(int argc, char* argv[]);
     Config config;
+
+private:
+    boost::asio::io_service io_service;
 };
 
 #define g_config Server::instance().config

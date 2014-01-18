@@ -36,11 +36,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add option="-DLOGIN_SERVER" />
 			<Add directory="../../common" />
 			<Add directory="../../login" />
 		</Compiler>
 		<Linker>
 			<Add library="/usr/lib/libpqxx.so" />
+			<Add library="/usr/lib/libboost_system.so" />
 		</Linker>
 		<Unit filename="../../common/config/config.cpp" />
 		<Unit filename="../../common/config/config.hpp" />
@@ -49,6 +51,7 @@
 		<Unit filename="../../common/config/third_party/pugixml.hpp" />
 		<Unit filename="../../common/database/database.cpp" />
 		<Unit filename="../../common/database/database.hpp" />
+		<Unit filename="../../common/database/orm.hpp" />
 		<Unit filename="../../common/database/tables/account.hpp" />
 		<Unit filename="../../common/utils/logger.cpp" />
 		<Unit filename="../../common/utils/logger.hpp" />
