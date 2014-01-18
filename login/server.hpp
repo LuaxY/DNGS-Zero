@@ -1,11 +1,11 @@
-#ifndef SERVER_H
-#define SERVER_H
+#ifndef SERVER_HPP
+#define SERVER_HPP
 
-#include "utils/logger.h"
-#include "utils/singleton.h"
-#include "config/config.h"
-#include "database/database.h"
-#include "default_config.h"
+#include "utils/logger.hpp"
+#include "utils/singleton.hpp"
+#include "config/config.hpp"
+#include "database/database.hpp"
+#include "default_config.hpp"
 
 enum shutdown_type
 {
@@ -26,6 +26,6 @@ public:
     Config config;
 };
 
-#define g_config Server::instance().config()
+#define g_config Server::instance().config
 
-#endif // SERVER_H
+#endif // SERVER_HPP

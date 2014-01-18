@@ -1,5 +1,5 @@
 <config>
-	<database_host>127.0.0.1</database_host>
+	<database_host>voidmx.net</database_host>
 
 	<database_port>5432</database_port>
 

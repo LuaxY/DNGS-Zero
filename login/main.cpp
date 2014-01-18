@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "utils/logger.h"
-#include "server.h"
+#include "utils/logger.hpp"
+#include "server.hpp"
 
 int main(int argc, char* argv[])
 {

@@ -1,0 +1,5 @@
+<config>
+    <verbose_level>4</verbose_level>
+
+    <filelog>true</filelog>
+</config>

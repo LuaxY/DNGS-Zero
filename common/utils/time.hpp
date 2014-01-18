@@ -1,5 +1,5 @@
-#ifndef TIME_H
-#define TIME_H
+#ifndef TIME_HPP
+#define TIME_HPP
 
 #include <ctime>
 #include <string>
@@ -9,4 +9,4 @@ std::string get_current_time(char separator = ':');
 std::string get_current_date(char separator = ':');
 static std::string started_time = get_current_date('-') + "-" + get_current_time('-');;
 
-#endif // TIME_H
+#endif // TIME_HPP

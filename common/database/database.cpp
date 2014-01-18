@@ -1,6 +1,6 @@
-#include "database/database.h"
-#include "database/tables/account.h"
-#include "utils/unit_test.h"
+#include "database/database.hpp"
+#include "database/tables/account.hpp"
+#include "utils/unit_test.hpp"
 
 Database::~Database()
 {

@@ -1,16 +1,16 @@
-#ifndef CONFIG_H
-#define CONFIG_H
+#ifndef CONFIG_HPP
+#define CONFIG_HPP
 
 #include <list>
 #include <unordered_map>
 #include <string>
 #include <boost/lexical_cast.hpp>
 
-#include "utils/logger.h"
-#include "utils/singleton.h"
+#include "utils/logger.hpp"
+#include "utils/singleton.hpp"
 #include "config/third_party/pugixml.hpp"
 
-class Config
+class Config : public Singleton<Config>
 {
 public:
     explicit Config(std::list<std::string>);
@@ -37,4 +37,4 @@ private:
 template<> bool Config::get_property(const std::string&, const bool&);
 template<> std::string Config::get_property(const std::string&, const std::string&);
 
-#endif // CONFIG_H
+#endif // CONFIG_HPP

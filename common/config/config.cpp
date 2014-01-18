@@ -1,4 +1,4 @@
-#include "config/config.h"
+#include "config/config.hpp"
 
 Config::Config(std::list<std::string> files) : _files { std::move(files) }
 {

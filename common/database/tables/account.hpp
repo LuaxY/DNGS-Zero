@@ -1,5 +1,5 @@
-#ifndef ACCOUNT_TABLE_H
-#define ACCOUNT_TABLE_H
+#ifndef ACCOUNT_TABLE_HPP
+#define ACCOUNT_TABLE_HPP
 
 #include <string>
 #include <odb/core.hxx>
@@ -43,5 +43,5 @@ private:
     std::string password_;
 };
 
-#endif // ACCOUNT_TABLE_H
+#endif // ACCOUNT_TABLE_HPP
 

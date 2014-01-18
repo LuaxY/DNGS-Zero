@@ -1,13 +1,13 @@
-#ifndef DATABASE_H
-#define DATABASE_H
+#ifndef DATABASE_HPP
+#define DATABASE_HPP
 
 #include <iostream>
 #include <pqxx/pqxx>
 
-#include "server.h"
-#include "config/config.h"
-#include "utils/logger.h"
-#include "utils/singleton.h"
+#include "server.hpp"
+#include "config/config.hpp"
+#include "utils/logger.hpp"
+#include "utils/singleton.hpp"
 
 class Database : public Singleton<Database>
 {
@@ -21,4 +21,4 @@ private:
     pqxx::connection* conn;
 };
 
-#endif // DATABASE_H
+#endif // DATABASE_HPP

@@ -36,32 +36,29 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
-			<Add option="-DDATABASE_MYSQL" />
-			<Add option="-DODB_THREADS_POSIX" />
 			<Add directory="../../common" />
 			<Add directory="../../login" />
 		</Compiler>
 		<Linker>
-			<Add library="/usr/local/lib/libodb-2.3.so" />
-			<Add library="/usr/local/lib/libodb-mysql-2.3.so" />
+			<Add library="/usr/lib/libpqxx.so" />
 		</Linker>
 		<Unit filename="../../common/config/config.cpp" />
-		<Unit filename="../../common/config/config.h" />
+		<Unit filename="../../common/config/config.hpp" />
 		<Unit filename="../../common/config/third_party/pugiconfig.hpp" />
 		<Unit filename="../../common/config/third_party/pugixml.cpp" />
 		<Unit filename="../../common/config/third_party/pugixml.hpp" />
 		<Unit filename="../../common/database/database.cpp" />
-		<Unit filename="../../common/database/database.h" />
-		<Unit filename="../../common/database/tables/account.h" />
+		<Unit filename="../../common/database/database.hpp" />
+		<Unit filename="../../common/database/tables/account.hpp" />
 		<Unit filename="../../common/utils/logger.cpp" />
-		<Unit filename="../../common/utils/logger.h" />
-		<Unit filename="../../common/utils/singleton.h" />
+		<Unit filename="../../common/utils/logger.hpp" />
+		<Unit filename="../../common/utils/singleton.hpp" />
 		<Unit filename="../../common/utils/time.cpp" />
-		<Unit filename="../../common/utils/time.h" />
-		<Unit filename="../../login/default_config.h" />
+		<Unit filename="../../common/utils/time.hpp" />
+		<Unit filename="../../login/default_config.hpp" />
 		<Unit filename="../../login/main.cpp" />
 		<Unit filename="../../login/server.cpp" />
-		<Unit filename="../../login/server.h" />
+		<Unit filename="../../login/server.hpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

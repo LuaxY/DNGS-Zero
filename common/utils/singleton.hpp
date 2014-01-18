@@ -1,5 +1,5 @@
-#ifndef SINGLETON_H
-#define SINGLETON_H
+#ifndef SINGLETON_HPP
+#define SINGLETON_HPP
 
 /*template <typename T>
 class Singleton
@@ -78,4 +78,4 @@ private:
 template<class T>
 std::unique_ptr<T> Singleton<T>::_singleton;
 
-#endif // SINGLETON_H
+#endif // SINGLETON_HPP

@@ -1,4 +1,4 @@
-#include "server.h"
+#include "server.hpp"
 
 Server::Server() : config { { "login.xml", "misc.xml" } }
 {
@@ -26,6 +26,8 @@ shutdown_type Server::run(int argc, char* argv[])
         config.get_property("database_name", DATABASE_NAME_DEFAULT));
 
     /** Start listening clients **/
+
+    Logger::info(verbosity::HIGHT) << location();
 
     database.kill();
 
