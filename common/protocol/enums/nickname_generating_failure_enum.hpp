@@ -1,0 +1,13 @@
+#ifndef NICKNAME_GENERATING_FAILURE_ENUM_HPP
+#define NICKNAME_GENERATING_FAILURE_ENUM_HPP
+
+namespace network
+{
+    enum nickname_generating_failure_enum
+    {
+        NICKNAME_GENERATOR_RETRY_TOO_SHORT = 1,
+        NICKNAME_GENERATOR_UNAVAILABLE = 2
+    };
+}
+
+#endif // NICKNAME_GENERATING_FAILURE_ENUM_HPP

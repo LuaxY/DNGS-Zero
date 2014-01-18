@@ -1,0 +1,15 @@
+#ifndef CRAFTER_DIRECTORY_PARAM_BIT_ENUM_HPP
+#define CRAFTER_DIRECTORY_PARAM_BIT_ENUM_HPP
+
+namespace network
+{
+    enum crafter_directory_param_bit_enum
+    {
+        CRAFT_OPTION_NONE = 0,
+        CRAFT_OPTION_NOT_FREE = 1,
+        CRAFT_OPTION_NOT_FREE_EXCEPT_ON_FAIL = 2,
+        CRAFT_OPTION_RESOURCES_REQUIRED = 4
+    };
+}
+
+#endif // CRAFTER_DIRECTORY_PARAM_BIT_ENUM_HPP

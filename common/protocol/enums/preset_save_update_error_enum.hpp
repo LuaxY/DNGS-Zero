@@ -1,0 +1,15 @@
+#ifndef PRESET_SAVE_UPDATE_ERROR_ENUM_HPP
+#define PRESET_SAVE_UPDATE_ERROR_ENUM_HPP
+
+namespace network
+{
+    enum preset_save_update_error_enum
+    {
+        PRESET_UPDATE_ERR_UNKNOWN = 1,
+        PRESET_UPDATE_ERR_BAD_PRESET_ID = 2,
+        PRESET_UPDATE_ERR_BAD_POSITION = 3,
+        PRESET_UPDATE_ERR_BAD_OBJECT_ID = 4
+    };
+}
+
+#endif // PRESET_SAVE_UPDATE_ERROR_ENUM_HPP

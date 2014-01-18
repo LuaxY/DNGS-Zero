@@ -1,0 +1,18 @@
+#ifndef SOCIAL_CONTACT_CATEGORY_ENUM_HPP
+#define SOCIAL_CONTACT_CATEGORY_ENUM_HPP
+
+namespace network
+{
+    enum social_contact_category_enum
+    {
+        SOCIAL_CONTACT_FRIEND = 0,
+        SOCIAL_CONTACT_SPOUSE = 1,
+        SOCIAL_CONTACT_PARTY = 2,
+        SOCIAL_CONTACT_GUILD = 3,
+        SOCIAL_CONTACT_ALLIANCE = 4,
+        SOCIAL_CONTACT_CRAFTER = 5,
+        SOCIAL_CONTACT_INTERLOCUTOR = 6
+    };
+}
+
+#endif // SOCIAL_CONTACT_CATEGORY_ENUM_HPP

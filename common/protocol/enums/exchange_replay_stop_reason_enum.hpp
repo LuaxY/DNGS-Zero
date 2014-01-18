@@ -1,0 +1,15 @@
+#ifndef EXCHANGE_REPLAY_STOP_REASON_ENUM_HPP
+#define EXCHANGE_REPLAY_STOP_REASON_ENUM_HPP
+
+namespace network
+{
+    enum exchange_replay_stop_reason_enum
+    {
+        STOPPED_REASON_OK = 1,
+        STOPPED_REASON_USER = 2,
+        STOPPED_REASON_MISSING_RESSOURCE = 3,
+        STOPPED_REASON_IMPOSSIBLE_CRAFT = 4
+    };
+}
+
+#endif // EXCHANGE_REPLAY_STOP_REASON_ENUM_HPP
