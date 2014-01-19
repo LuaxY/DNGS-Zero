@@ -44,6 +44,8 @@
 			<Add library="/usr/lib/libpqxx.so" />
 			<Add library="/usr/lib/libboost_system.so" />
 		</Linker>
+		<Unit filename="../../common/bytes/byte_buffer.cpp" />
+		<Unit filename="../../common/bytes/byte_buffer.hpp" />
 		<Unit filename="../../common/config/config.cpp" />
 		<Unit filename="../../common/config/config.hpp" />
 		<Unit filename="../../common/config/third_party/pugiconfig.hpp" />

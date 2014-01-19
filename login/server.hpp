@@ -28,7 +28,7 @@ public:
     Config config;
 
 private:
-    boost::asio::io_service io_service;
+    boost::asio::io_service _service;
 };
 
 #define g_config Server::instance().config

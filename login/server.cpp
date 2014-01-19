@@ -27,6 +27,9 @@ shutdown_type Server::run(int argc, char* argv[])
 
     //pInfo(verbosity::HIGHT) << location();
 
+    boost::asio::ip::tcp::acceptor _listen(_service, boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), config.get_property("login_port", LOGIN_PORT_DEFAULT)));
+    _service.run();
+
     database.kill();
 
     return shutdown_type::NORMAL;
